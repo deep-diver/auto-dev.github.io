@@ -1,0 +1,8 @@
+---
+title: 'Markdown style guide (draft placeholder)'
+description: 'Starter content retained as a draft.'
+pubDate: '2026-03-12'
+draft: true
+---
+
+Replace or delete this draft.

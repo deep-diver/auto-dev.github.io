@@ -1,0 +1,13 @@
+---
+import { SITE_BASE } from '../consts';
+const today = new Date();
+---
+
+<footer class="site-footer">
+  <p>© {today.getFullYear()} auto-dev. Built with Astro and a taste for clean interfaces.</p>
+  <p>
+    <a href="https://github.com/deep-diver/auto-dev.github.io" target="_blank" rel="noreferrer">GitHub</a>
+    <span aria-hidden="true"> · </span>
+    <a href={`${SITE_BASE}/rss.xml`}>RSS</a>
+  </p>
+</footer>

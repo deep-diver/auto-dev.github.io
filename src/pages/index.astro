@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_BASE, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="hero">
+        <span class="eyebrow">Static blog · light/dark ready</span>
+        <div class="hero-grid">
+          <div>
+            <h1>auto-dev is a clean space for dev notes, experiments, and battle scars.</h1>
+            <p>
+              A fast static blog set up for technical writing, with a monochrome aesthetic,
+              theme toggle, Markdown/MDX content, RSS, and room to grow.
+            </p>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.25rem;">
+              <a class="button-link primary" href={`${SITE_BASE}/blog`}>Read the blog</a>
+              <a class="button-link" href="https://github.com/deep-diver/auto-dev.github.io" target="_blank" rel="noreferrer">View repository</a>
+            </div>
+          </div>
+          <div class="card">
+            <h3>What this setup is good at</h3>
+            <ul>
+              <li>technical essays and devlogs</li>
+              <li>clean typography with minimal chrome</li>
+              <li>fast static deploys via GitHub Pages</li>
+              <li>dark/light mode without framework bloat</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card-grid">
+        <article class="card">
+          <h3>Write in Markdown</h3>
+          <p>Keep posts in <code>src/content/blog</code> and let Astro handle routing, RSS, and sitemap generation.</p>
+        </article>
+        <article class="card">
+          <h3>Monochrome by default</h3>
+          <p>The design intentionally stays black/white/gray so code, diagrams, and screenshots pop when you add them.</p>
+        </article>
+        <article class="card">
+          <h3>Easy to customize</h3>
+          <p>Swap fonts, add search, or wire in comments later without rebuilding the whole thing.</p>
+        </article>
+      </section>
+
+      <section style="margin-top:3rem;">
+        <div style="display:flex; justify-content:space-between; gap:1rem; align-items:end; flex-wrap:wrap; margin-bottom:1rem;">
+          <div>
+            <span class="eyebrow">Recent posts</span>
+            <h2 style="margin-top:1rem;">Start here</h2>
+          </div>
+          <a href={`${SITE_BASE}/blog`}>See all posts →</a>
+        </div>
+
+        <div class="post-list">
+          {posts.map((post) => (
+            <a class="post-card" href={`${SITE_BASE}/blog/${post.id}/`}>
+              <div class="meta"><FormattedDate date={post.data.pubDate} /></div>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              {post.data.tags.length > 0 && (
+                <div class="tags">{post.data.tags.map((tag) => <span>{tag}</span>)}</div>
+              )}
+            </a>
+          ))}
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

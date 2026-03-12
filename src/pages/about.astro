@@ -1,0 +1,39 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`About · ${SITE_TITLE}`} description="About this blog" />
+  </head>
+  <body>
+    <Header />
+    <main class="prose">
+      <section class="hero">
+        <span class="eyebrow">About</span>
+        <div>
+          <h1>A small corner of the internet for making software in public.</h1>
+          <p>
+            This site is designed for development writing: postmortems, architecture notes,
+            implementation details, experiments, and lessons learned the annoying way.
+          </p>
+        </div>
+      </section>
+      <article>
+        <p>
+          The stack is intentionally simple: Astro for static output, Markdown/MDX for content,
+          RSS for syndication, and a monochrome theme that can flip between light and dark.
+        </p>
+        <p>
+          Replace this page with your own bio, areas of interest, current projects, links,
+          or a short explanation of what readers should expect here.
+        </p>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
