@@ -21,44 +21,18 @@ const posts = (await getCollection('blog'))
     <Header />
     <main>
       <section class="hero">
-        <span class="eyebrow">Static blog · light/dark ready</span>
-        <div class="hero-grid">
-          <div>
-            <h1>auto-dev is a clean space for dev notes, experiments, and battle scars.</h1>
-            <p>
-              A fast static blog set up for technical writing, with a monochrome aesthetic,
-              theme toggle, Markdown/MDX content, RSS, and room to grow.
-            </p>
-            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.25rem;">
-              <a class="button-link primary" href={`${SITE_BASE}/blog/how-this-site-was-built/`}>Read the first post</a>
-              <a class="button-link" href="https://github.com/deep-diver/auto-dev.github.io" target="_blank" rel="noreferrer">View repository</a>
-            </div>
-          </div>
-          <div class="card">
-            <h3>What this setup is good at</h3>
-            <ul>
-              <li>technical essays and devlogs</li>
-              <li>clean typography with minimal chrome</li>
-              <li>fast static deploys via GitHub Pages</li>
-              <li>dark/light mode without framework bloat</li>
-            </ul>
+        <span class="eyebrow">AI-built or AI-directed work</span>
+        <div>
+          <h1>auto-dev is a publishing space for things built by AI, or built by humans telling AI what to build.</h1>
+          <p>
+            The point is not just to show finished output, but to document the process behind it:
+            what was delegated, what was reviewed, what broke, and what became worth sharing.
+          </p>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.25rem;">
+            <a class="button-link primary" href={`${SITE_BASE}/blog/how-this-site-was-built/`}>Read the first post</a>
+            <a class="button-link" href={`${SITE_BASE}/about`}>Why this site exists</a>
           </div>
         </div>
-      </section>
-
-      <section class="card-grid">
-        <article class="card">
-          <h3>Write in Markdown</h3>
-          <p>Keep posts in <code>src/content/blog</code> and let Astro handle routing, RSS, and sitemap generation.</p>
-        </article>
-        <article class="card">
-          <h3>Monochrome by default</h3>
-          <p>The design intentionally stays black/white/gray so code, diagrams, and screenshots pop when you add them.</p>
-        </article>
-        <article class="card">
-          <h3>Easy to customize</h3>
-          <p>Swap fonts, add search, or wire in comments later without rebuilding the whole thing.</p>
-        </article>
       </section>
 
       <section style="margin-top:3rem;">
