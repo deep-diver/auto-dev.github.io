@@ -10,7 +10,7 @@ import { SITE_TITLE } from '../consts';
   <head>
     <BaseHead
       title={`About · ${SITE_TITLE}`}
-      description="Why this site exists and what kind of work it documents."
+      description="A site for sharing things built by AI, or built by humans directing AI."
     />
   </head>
   <body>
@@ -19,61 +19,59 @@ import { SITE_TITLE } from '../consts';
       <section class="hero">
         <span class="eyebrow">About</span>
         <div>
-          <h1>A publishing space for software built by AI, or built by humans working with AI.</h1>
+          <h1>This is a site for sharing things built by AI, or built by humans directing AI.</h1>
           <p>
-            This site exists to share the results, process, and lessons behind projects where AI is not just a toy,
-            but an actual participant in making software.
+            Some of the work published here is developed mostly by AI agents.
+            Some of it is developed by humans who use AI as a tool, a delegate, a pair programmer,
+            or an implementation engine. Most of the interesting output lives somewhere in between.
           </p>
         </div>
       </section>
       <article>
         <p>
-          Sometimes the work is generated mostly by an AI agent. Sometimes a human directs the work,
-          reviews it, corrects it, and shapes it into something publishable. Most of the interesting cases
-          live somewhere in between. That middle ground is what this site is for.
+          The purpose of this site is simple: to document and share the results of that kind of work.
+          Not just the finished artifact, but also the process behind it — what was delegated,
+          what was reviewed by a human, what had to be corrected, and what turned out better or worse than expected.
         </p>
 
         <p>
-          The goal is not to pretend that AI did everything alone, and not to reduce the human role to a footnote.
-          The goal is to document what was actually made, how it was made, what the collaboration looked like,
-          and whether the result was worth the effort.
+          "Made with AI" is usually too vague to mean much. It can describe anything from autocomplete,
+          to scaffolding, to full agent-driven implementation. This site exists to add detail where that label is too blurry.
+          The goal is to make the collaboration visible enough that the result can actually be understood and evaluated.
         </p>
 
-        <h2>Why publish this kind of work?</h2>
-        <p>
-          Because a lot of AI-assisted development currently disappears into chat history, private repos,
-          and demos with no durable record. That makes it hard to learn from real examples. A public archive
-          creates a better paper trail: what prompts worked, what architecture decisions were made,
-          where AI was genuinely useful, and where a human still had to take the wheel.
-        </p>
-
-        <p>
-          There is also a softer reason: this kind of work deserves context. "Built with AI" is not very informative.
-          It can mean autocomplete, an agent doing scaffolding, a human delegating implementation,
-          or a much more involved back-and-forth. Publishing the surrounding explanation makes the output more credible,
-          and more useful to anyone trying to do similar work.
-        </p>
-
-        <h2>What belongs here?</h2>
+        <h2>What gets published here</h2>
         <ul>
-          <li>projects created directly by AI agents</li>
-          <li>projects developed by humans through AI delegation and review</li>
-          <li>build logs, postmortems, and implementation notes</li>
-          <li>before/after writeups showing how a rough AI draft became a real product</li>
-          <li>tooling experiments around agent workflows, browser automation, and code generation</li>
+          <li>projects generated or assembled by AI agents</li>
+          <li>projects built by a human through AI delegation and supervision</li>
+          <li>technical write-ups explaining how those results were produced</li>
+          <li>build logs, postmortems, architecture notes, and workflow experiments</li>
+          <li>examples where the AI output was useful, flawed, surprising, or worth dissecting</li>
         </ul>
 
-        <h2>The point</h2>
+        <h2>Why make a site like this?</h2>
         <p>
-          The point is not hype. It is evidence.
-          A site like this can show what AI-assisted development actually looks like when it leaves the lab,
-          hits constraints, gets revised by humans, and turns into something other people can inspect.
+          Because a lot of AI-assisted development currently vanishes into prompt history,
+          chat logs, and private repositories. That makes it hard to study, hard to compare,
+          and hard to trust. A public record creates something better: evidence.
         </p>
 
         <p>
-          If the current era of software is going to involve humans and AI building together,
-          then it is worth keeping a record of the artifacts, the workflow, and the judgment calls that shaped them.
-          That is the reason this site exists.
+          This site is meant to be that record. A place where outputs can be inspected,
+          where methods can be explained, and where the line between human judgment and AI execution
+          is treated as part of the story rather than something to hide.
+        </p>
+
+        <h2>The underlying idea</h2>
+        <p>
+          If AI is going to become part of how software gets made, then the resulting work should be publishable,
+          reviewable, and discussable in public. That means documenting not only the code or product,
+          but the collaboration model that produced it.
+        </p>
+
+        <p>
+          That is what this site is for: sharing software built by AI, or built by humans who told AI what to build,
+          and showing enough of the process that the result is more than just a claim.
         </p>
       </article>
     </main>
